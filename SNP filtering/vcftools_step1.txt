@@ -1,0 +1,4 @@
+
+#remove SNPs that were genotyped in fewer than 70% of individuals and a minor allele count (mac) of >3 
+vcftools  --vcf populations.snps.vcf --recode-INFO-all --mac 3 --max-missing 0.7 --out raw.maxmiss.7 --recode
+

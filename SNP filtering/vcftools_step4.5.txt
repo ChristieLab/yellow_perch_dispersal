@@ -1,0 +1,5 @@
+
+#filter blacklisted snps from HDplot
+vcftools --vcf raw.maxmiss.7.missindv.7.maf.01.recode.vcf --exclude-positions HDplot_blacklist.txt --recode-INFO-all --out raw.maxmiss.7.missindv.7.maf.01.HDplot
+
+

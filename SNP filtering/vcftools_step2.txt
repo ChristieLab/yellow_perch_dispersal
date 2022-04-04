@@ -1,0 +1,17 @@
+
+#remove SNPs that were genotyped in fewer than 70% of individuals and a minor allele count (mac) of <3 
+vcftools  --vcf populations.snps.vcf --recode-INFO-all --mac 3 --max-missing 0.7 --out raw.maxmiss.7 --recode
+
+#remove individuals with >70% missing loci 
+#first run 
+vcftools --vcf raw.maxmiss.7.missindv.7.recode.vcf --missisng-indv
+
+
+##from output, create list of bad individuals to remove
+
+awk '$5 > 0.3' out.imiss | cut -f1 > badindiv.7
+
+##then run
+vcftools  --vcf raw.maxmiss.7.recode.vcf --remove badindv.7 --recode-INFO-all --out raw.maxmiss.7.missindv.7
+
+

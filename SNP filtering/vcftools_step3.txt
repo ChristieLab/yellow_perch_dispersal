@@ -1,0 +1,5 @@
+
+#remove SNPs that had a minor allele frequency (maf) <.01
+vcftools --vcf raw.maxmiss.7.missindv.7.recode.vcf --recode-INFO-all --maf 0.01 --out raw.maxmiss.7.missindv.7.maf.01
+
+

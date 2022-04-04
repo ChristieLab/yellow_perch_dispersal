@@ -1,0 +1,4 @@
+
+#filter one last time by maf .05
+vcftools --vcf g70low30maf01.HDP.1SNP.vcf --recode-INFO-all --maf 0.05 --out maxmiss.7.missindv.7.maf.01.HDplot.1snp.maf.05.vcf
+
